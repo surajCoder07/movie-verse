@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+        font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 500;
+        
+    
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        --opacity-bottom: linear-gradient(
+            180deg,
+            rgba(4, 21, 45, 0) 0%,
+            #04152d 79.17%
+        );
+        --opacity-top: linear-gradient(
+            180deg,
+            rgba(4, 21, 45, 0) 0%,
+            #04152d 100%
+        );
+    
+        --primary-blue-3: #04152d;
+        --primary-blue-2: #041226;
+        --primary-blue: #020c1b;
+        --blue-light-1: #1c4b91;
+        --blue-light-2: #173d77;
+        --pink: #da2f68;
+        --orange: #f89e00;
+        --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+    }
