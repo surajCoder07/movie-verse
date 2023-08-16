@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
 import HeroBanner from "./HeroBanner";
 import useFetch from "../utils/useFetch";
+import Trending from "./Trending";
+import Popular from "./Popular";
 const Home = () => {
   const [background, setBackground] = useState("");
 
-  const { data, error } = useFetch("movie/popular?language=en-US");
+  const { fetchedData, error } = useFetch("movie/popular?language=en-US");
   useEffect(() => {
     const bg =
-      data?.results[Math.floor(Math.random() * data.results.length)]
-        .backdrop_path;
+      fetchedData?.results[
+        Math.floor(Math.random() * fetchedData.results.length)
+      ].backdrop_path;
     setBackground(bg);
-    console.log(
-      data?.results[Math.floor(Math.random() * data.results.length)]
-        .backdrop_path
-    );
-  }, [data]);
+  }, [fetchedData]);
   return (
-    <div className="">
+    <div className="  -z-10">
       <HeroBanner bg={background} />
+      <Trending />
+      <Popular />
     </div>
   );
 };

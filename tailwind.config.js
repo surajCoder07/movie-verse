@@ -9,18 +9,17 @@ module.exports = {
         "primary-blue-1": "var(--primary-blue)",
         "blue-light-1": "var(--blue-light-1)",
         "blue-light-2": "var(--blue-light-2)",
-        "font-family" : "var(font-family)",
+        orange: "var(--orange)",
       },
-      backgroundImage:{
-        "gradient":"var(--gradient)",
-        "opacity-top":"var(--opacity-top)",
-        "opacity-bottom":"var(--opacity-bottom)"
-
+      backgroundImage: {
+        gradient: "var(--gradient)",
+        "opacity-top": "var(--opacity-top)",
+        "opacity-bottom": "var(--opacity-bottom)",
       },
-      fontFamily:{
-        "font":"var(font-family)"
-      }
+      fontFamily: {
+        font: "var(font-family)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
