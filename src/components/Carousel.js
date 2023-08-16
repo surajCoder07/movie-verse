@@ -61,7 +61,7 @@ const Carousel = ({ data }) => {
         className="flex overflow-hidden scrollbar-hide max-sm:overflow-x-scroll  gap-5 max-sm:gap-4 scroll-smooth"
       >
         {data !== undefined ? (
-          data.map((card) => {
+          data?.map((card) => {
             const poster_URL = card?.poster_path
               ? img_Base_URL + card.poster_path
               : PosterFallback;

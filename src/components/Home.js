@@ -3,10 +3,12 @@ import HeroBanner from "./HeroBanner";
 import useFetch from "../utils/useFetch";
 import Trending from "./Trending";
 import Popular from "./Popular";
+import TopRated from "./TopRated";
 const Home = () => {
   const [background, setBackground] = useState("");
 
   const { fetchedData, error } = useFetch("movie/popular?language=en-US");
+  console.log(fetchedData);
   useEffect(() => {
     const bg =
       fetchedData?.results[
@@ -19,6 +21,7 @@ const Home = () => {
       <HeroBanner bg={background} />
       <Trending />
       <Popular />
+      <TopRated/>
     </div>
   );
 };

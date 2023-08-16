@@ -9,16 +9,19 @@ module.exports = {
         "primary-blue-1": "var(--primary-blue)",
         "blue-light-1": "var(--blue-light-1)",
         "blue-light-2": "var(--blue-light-2)",
-        orange: "var(--orange)",
+        "orange": "var(--orange)",
       },
       backgroundImage: {
-        gradient: "var(--gradient)",
+        "gradient": "var(--gradient)",
         "opacity-top": "var(--opacity-top)",
         "opacity-bottom": "var(--opacity-bottom)",
       },
       fontFamily: {
-        font: "var(font-family)",
+        "font": "var(font-family)",
       },
+      boxShadow:{
+        "custom" :"0px 0px 10px orange "
+      }
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

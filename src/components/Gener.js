@@ -24,13 +24,13 @@ const Gener = ({ data }) => {
   };
 
   return (
-    <div className="absolute  right-0 bottom-0 flex flex-wrap  gap-2   justify-end max-sm:hidden ">
+    <div className="absolute  right-[2px] bottom-[2px] flex flex-wrap  gap-2   justify-end max-sm:hidden ">
       {data?.slice().map((genre) => {
         if (!allGenresData[genre]) return;
         return (
           <span
             key={genre}
-            className="text-xs bg-pink-800 px-1 rounded-sm font-medium"
+            className="text-xs bg-pink-700 px-1 rounded-sm font-medium"
           >
             {allGenresData[genre]}
           </span>
