@@ -70,7 +70,7 @@ const Carousel = ({ data, endpoint }) => {
               <Link to={endpoint + "/" + card?.id}>
                 <div
                   key={card.id}
-                  className=" max-sm:w-[124px] w-[210px] relative  gap-5 flex-shrink-0  flex flex-col duration-700 hover:scale-105 "
+                  className=" max-sm:w-[124px] w-[210px] relative min-h-[300px] gap-5 flex-shrink-0  flex flex-col duration-700 hover:scale-105 "
                 >
                   <div className="relative">
                     <img
