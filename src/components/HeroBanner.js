@@ -7,7 +7,7 @@ const HeroBanner = ({ bg }) => {
       <span className="absolute top-0 left-0 w-full h-[250px] bg-opacity-top rotate-180"></span>
 
       <div className="absolute bottom-0 top-0 w-[100%] min-w-full    -z-[0] object-center ">
-        <Img src={bg} class=" h-full  w-full blur-0 " />
+        <Img src={bg} class=" h-full  w-full " />
       </div>
       <div className="flex flex-col gap-4 items-center justify-center h-full w-full  px-2 ">
         <div className="flex flex-col items-center gap-2 max-sm:min-w-full max-w-[500px] ">

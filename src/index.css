@@ -18,6 +18,11 @@
             rgba(4, 21, 45, 0) 0%,
             #04152d 79.17%
         );
+        --opacity-details: linear-gradient(
+            180deg,
+            rgba(4, 21, 45, 0) -400%,
+            #04152d 99.17%
+        );
         --opacity-top: linear-gradient(
             180deg,
             rgba(4, 21, 45, 0) 0%,

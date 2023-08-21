@@ -5,7 +5,7 @@ import Carousel from "./Carousel";
 
 const Trending = () => {
   const [endpoint, setEndpoint] = useState("day");
-  const { fetchedData } = useFetch(`/trending/all/${endpoint}`);
+  const { fetchedData } = useFetch(`/trending/all/${endpoint}?media_type`);
 
   const onTabChange = (tab) => {
     setEndpoint(endpoint === "day" ? "week" : "day");
@@ -17,7 +17,7 @@ const Trending = () => {
         <h1 className="text-3xl max-sm:text-xl">Trending</h1>
         <SwitchTabs data={["day", "week"]} onTabChange={onTabChange} />
       </div>
-      <Carousel data={fetchedData?.results} />
+      <Carousel data={fetchedData?.results} endpoint={"movie"} />
     </div>
   );
 };

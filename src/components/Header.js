@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { GoSearch, GoX } from "react-icons/go";
 import { IoIosMenu } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -40,10 +41,10 @@ const Header = () => {
 
   },[scrollY])
   return (
-    <div className={`grid grid-flow-col items-center justify-between px-2 h-auto z-50 fixed w-[100%]   bg-opacity-0 duration-500  text-white  ${headerCss}  ${mobileView&&"bg-primary-blue-3 duration-700 bg-opacity-10"}`}>
-      <div className="grid-6 w-16  ">
+    <div className={`grid grid-flow-col items-center justify-between px-2 h-auto z-[9999] fixed w-[100%]   bg-opacity-0 duration-500  text-white  ${headerCss}  ${mobileView&&"bg-primary-blue-3 duration-700 bg-opacity-10"}`}>
+      <a href="/" className="grid-6 w-16  ">
         <img src={logo} alt="logo" className="w-full object-cover h-auto" />
-      </div>
+      </a>
       <div className="grid-6 flex gap-3 items-center">
         {!mobileView && (
           <div

@@ -18,7 +18,7 @@ const Popular = () => {
         <h1 className="text-3xl max-sm:text-xl">What's Popular</h1>
         <SwitchTabs data={["movie", "Tv Shows"]} onTabChange={onTabChange} />
       </div>
-      <Carousel data={fetchedData?.results} />
+      <Carousel data={fetchedData?.results} endpoint={endpoint} />
     </div>
   );
 };

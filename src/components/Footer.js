@@ -3,7 +3,7 @@ import {RiFacebookCircleFill ,RiTwitterLine ,RiInstagramLine ,RiLinkedinBoxFill}
 
 const Footer = () => {
   return (
-    <div className="bg-primary-blue-2 text-white py-8 px-48 max-sm:px-3 flex flex-col gap-4">
+    <div className="bg-primary-blue-2 text-white py-8 px-48 max-sm:px-3 flex flex-col gap-4 ">
       <div className="flex justify-center flex-wrap items-center text-center">
         <ul className="flex gap-3 text-sm max-sm:text-xs">
           <li className="hover:text-orange duration-500">Term & Conditions</li>

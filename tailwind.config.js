@@ -15,6 +15,7 @@ module.exports = {
         "gradient": "var(--gradient)",
         "opacity-top": "var(--opacity-top)",
         "opacity-bottom": "var(--opacity-bottom)",
+        "opacity-details":"var(--opacity-details)"
       },
       fontFamily: {
         "font": "var(font-family)",

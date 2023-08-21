@@ -5,8 +5,8 @@ import SwitchTabs from "./SwitchTabs";
 
 const TopRated = () => {
   const [endpoint, setEndpoint] = useState("movie");
-  
-  const { fetchedData } = useFetch(`${endpoint}/top_rated?language=en-US&page=1`);
+
+  const { fetchedData } = useFetch(`${endpoint}/top_rated?media_type`);
   const onTabChange = (tab) => {
     setEndpoint(endpoint === "movie" ? "tv" : "movie");
   };
@@ -17,7 +17,7 @@ const TopRated = () => {
         <h1 className="text-3xl max-sm:text-xl">Top Rated </h1>
         <SwitchTabs data={["movie", "Tv Shows"]} onTabChange={onTabChange} />
       </div>
-      <Carousel data={fetchedData?.results} />
+      <Carousel data={fetchedData?.results} endpoint={endpoint} />
     </div>
   );
 };

@@ -9,8 +9,8 @@ import dayjs from "dayjs";
 import CircularRating from "./CircularRating";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import fetchDataFromApi from "../utils/fetchDataFromApi";
-import Gener from "./Gener";
+import Genre from "./Genre";
+import { Link } from "react-router-dom";
 
 const ShimmerCard = () => {
   return (
@@ -28,7 +28,7 @@ const ShimmerCard = () => {
   );
 };
 
-const Carousel = ({ data }) => {
+const Carousel = ({ data, endpoint }) => {
   const carouselContainer = useRef();
 
   const navigate = (direction) => {
@@ -65,33 +65,47 @@ const Carousel = ({ data }) => {
             const poster_URL = card?.poster_path
               ? img_Base_URL + card.poster_path
               : PosterFallback;
+
             return (
-              <div
-                key={card.id}
-                className=" max-sm:w-[124px] w-[210px] relative  gap-5 flex-shrink-0  flex flex-col duration-700 hover:scale-105 "
-              >
-                <div className="relative">
-                  <img
-                    src={poster_URL}
-                    alt=""
-                    className={
-                      " object-center   relative object-cover rounded-xl"
-                    }
-                  />
-                  <CircularRating rating={card?.vote_average} />
-                  <Gener data={card.genre_ids.slice(0, 2)} />
+              <Link to={endpoint + "/" + card?.id}>
+                <div
+                  key={card.id}
+                  className=" max-sm:w-[124px] w-[210px] relative  gap-5 flex-shrink-0  flex flex-col duration-700 hover:scale-105 "
+                >
+                  <div className="relative">
+                    <img
+                      src={poster_URL}
+                      alt=""
+                      className={
+                        " object-center   relative object-cover rounded-xl"
+                      }
+                    />
+                    <CircularRating
+                      rating={card?.vote_average}
+                      containerClass={
+                        "absolute bottom-[-10px]   left-1 max-sm:w-[30px] w-[50px] bg-white rounded-full"
+                      }
+                      textColor={"black"}
+                    />
+                    <Genre
+                      data={card.genre_ids.slice(0, 2)}
+                      containerClass={
+                        "absolute  right-[2px] bottom-[2px] flex flex-wrap  gap-2   justify-end max-sm:hidden "
+                      }
+                    />
+                  </div>
+                  <div className="py-2 flex flex-col gap-3">
+                    <span className="text-white font-medium text-lg max-sm:text-sm">
+                      {card?.title?.length > 20
+                        ? card?.title?.slice(0, 20) + "..."
+                        : card?.title || card.name}
+                    </span>
+                    <span className="text-gray-400 max-sm:text-xs">
+                      {dayjs(card?.release_date).format("MMM D ,YYYY")}
+                    </span>
+                  </div>
                 </div>
-                <div className="py-2 flex flex-col gap-3">
-                  <span className="text-white font-medium text-lg max-sm:text-sm">
-                    {card?.title?.length > 20
-                      ? card?.title?.slice(0, 20) + "..."
-                      : card?.title || card.name}
-                  </span>
-                  <span className="text-gray-400 max-sm:text-xs">
-                    {dayjs(card?.release_date).format("MMM D ,YYYY")}
-                  </span>
-                </div>
-              </div>
+              </Link>
             );
           })
         ) : (
