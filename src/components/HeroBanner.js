@@ -3,7 +3,7 @@ import Img from "./Img";
 
 const HeroBanner = ({ bg }) => {
   return (
-    <div className="max-sm:h-[400px] w-full  relative h-[500px]">
+    <div className="max-sm:h-[400px] w-full  relative h-[600px]">
       <span className="absolute top-0 left-0 w-full h-[250px] bg-opacity-top rotate-180"></span>
 
       <div className="absolute bottom-0 top-0 w-[100%] min-w-full    -z-[0] object-center ">
